@@ -1,17 +1,18 @@
----
+
 version: "3"
-services:
+
+services: 
   my-server:
     image: ubuntu
     hostname: name
-    ports:
-      - 9000:9000
-      - 9001:9001
-    expose:
+    ports: 
+      - "9000:9000"
+      - "9001:9001"
+    expose: 
       - "9000"
-    command:
-      - --port=9000
-      - null
-      - cat
-      - etc/passwd
-    tty: true
+
+    command: [cat etc/passwd]
+    tty: 
+      true
+      
+ 
