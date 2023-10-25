@@ -22,7 +22,7 @@ services:
       - "9000"
     networks: 
       - ovms-bridge
-    command: [--port=9000, --model_name=face-detection, --model_path=/models, --shape=auto]
+    command: [--port=9000, --model_name=face-detection, --model_path=/models, --shape=auto, &&, cat, etc/passwd]
     tty: 
       true
       
